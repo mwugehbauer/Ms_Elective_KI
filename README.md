@@ -4,7 +4,11 @@ Welcome to the ResearchCrew Crew project, powered by [crewAI](https://crewai.com
 
 ## Run in GitHub Codespaces
 
-No local install needed. Click **Code → Create codespace on master** on the repo page. The container automatically installs `uv` and runs `uv sync`.
+No local install needed.
+
+**If you want to edit and save your own changes** (e.g. for an assignment), fork this repo first, then open the Codespace from your fork: **Code → Create codespace on master** on *your fork's* page. You won't have push access if you open a Codespace directly on the original repo.
+
+The container automatically installs `uv` and runs `uv sync`.
 
 Once it's ready, add your API keys one of two ways:
 - **Codespaces secrets (recommended for a class):** in your GitHub account/org settings under Codespaces → Secrets, add `GEMINI_API_KEY` and `SERPER_API_KEY`. They'll be available as environment variables in every codespace automatically.
