@@ -6,6 +6,14 @@
 
 Moving an agent from "works on my machine" to production means: reproducible environments, observability into what the agent is actually doing (not just final output), and a way for non-developers to run it. None of this changes agent logic — it's the operational layer around it.
 
+## Original reference
+
+There's no single seminal paper for "agent operations" the way there is for RAG or ReAct — this is covered as a practitioner topic rather than a research result:
+
+> Lakshmanan, V. (2025). *Generative AI Design Patterns: Solutions to Common Challenges When Building GenAI Agents and Applications*. O'Reilly Media. (See the deployment/observability chapters.)
+
+No figure here — see the book for its own production-architecture diagrams.
+
 ## In this repo
 
 This project already demonstrates the full stack:

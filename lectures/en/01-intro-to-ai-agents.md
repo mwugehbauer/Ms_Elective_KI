@@ -11,6 +11,21 @@ An **AI agent** is an LLM given three things a plain chatbot doesn't have:
 
 A single LLM call answers one prompt. An agent can take multiple steps: think, call a tool, look at the result, decide what to do next, repeat until done.
 
+## Original paper
+
+The formal definition of a rational agent (perceives its environment via sensors, acts via actuators, chooses actions to maximize performance) goes back to the standard AI textbook:
+
+> Russell, S., & Norvig, P. (2020). *Artificial Intelligence: A Modern Approach* (4th ed.), Chapter 2: Intelligent Agents. Pearson.
+
+The "think, act, observe, repeat" loop CrewAI implements is the exact pattern formalized for LLMs in:
+
+> Yao, S., Zhao, J., Yu, D., Du, N., Shafran, I., Narasimhan, K., & Cao, Y. (2023). *ReAct: Synergizing Reasoning and Acting in Language Models*. ICLR 2023. [arXiv:2210.03629](https://arxiv.org/abs/2210.03629)
+
+![ReAct combines reasoning traces and actions, compared to reasoning-only and acting-only prompting](../assets/react-yao2022-fig1.png)
+*Figure 1 from Yao et al. (2023) — comparing standard prompting, reasoning-only (Chain-of-Thought), acting-only, and ReAct's interleaved reasoning+acting on two tasks (HotpotQA, AlfWorld). Reproduced from the paper for educational use in this course.*
+
+This is exactly the loop you'll watch the `researcher` agent execute in the exercise below: a `Thought` (reasoning), an `Act` (tool call), an `Obs` (observation), repeated until the agent decides it's done.
+
 ## In this repo
 
 Open [src/research_crew/crew.py](../../src/research_crew/crew.py). The `researcher` agent ([crew.py:17-23](../../src/research_crew/crew.py#L17-L23)) is a complete minimal example:

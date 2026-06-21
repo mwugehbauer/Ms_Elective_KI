@@ -8,6 +8,18 @@
 
 The sequential pattern is the right default when steps genuinely depend on each other in order — you can't analyze research that doesn't exist yet.
 
+## Original references
+
+This series' design-pattern vocabulary (sequential pipeline, hierarchical/manager-worker, planner-executor, reflection loops — covered across lectures 03, 07, 08, 09) follows the catalogue laid out in:
+
+> Lakshmanan, V. (2025). *Generative AI Design Patterns: Solutions to Common Challenges When Building GenAI Agents and Applications*. O'Reilly Media.
+
+The underlying agent *architectures* (simple reflex, model-based reflex, goal-based, utility-based, learning agents) that these patterns build on come from the classic taxonomy in:
+
+> Russell, S., & Norvig, P. (2020). *Artificial Intelligence: A Modern Approach* (4th ed.), Chapter 2: Intelligent Agents. Pearson.
+
+No figure here — both are books, not openly licensed papers, so we cite rather than reproduce their diagrams. If you have access to either, look up their respective agent-architecture diagrams and compare them to the sequential pipeline below.
+
 ## In this repo
 
 [crew.py:43-51](../../src/research_crew/crew.py#L43-L51):

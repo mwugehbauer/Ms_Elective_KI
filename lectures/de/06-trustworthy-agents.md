@@ -8,6 +8,17 @@ Agenten scheitern auf Arten, wie es einfache Funktionen nicht tun: sie können s
 - **Guardrails** — validieren die Ausgabe eines Tasks, *bevor* zum nächsten Schritt übergegangen werden darf, und können optional einen erneuten Versuch erzwingen
 - **Evaluation** — bewerten die Ausgabequalität nachträglich, für Monitoring oder Benotung statt für Blockade
 
+## Originalarbeit
+
+Die generelle Idee, KI selbst zu nutzen, um KI-Ausgaben gegen einen Satz von Prinzipien zu prüfen und zu überarbeiten — statt sich rein auf menschliches Review zu verlassen — wurde in großem Maßstab demonstriert in:
+
+> Bai, Y., Kadavath, S., Kundu, S., Askell, A., Kernion, J., Jones, A., Chen, A., Goldie, A., Mirhoseini, A., McKinnon, C., et al. (2022). *Constitutional AI: Harmlessness from AI Feedback*. Anthropic. [arXiv:2212.08073](https://arxiv.org/abs/2212.08073)
+
+![Constitutional-AI-Pipeline: eine Supervised-Learning-Phase (Antworten generieren, kritisieren, überarbeiten) gefolgt von einer Reinforcement-Learning-Phase (Antwortpaare generieren, KI-Feedback erhalten, ein Präferenzmodell trainieren, RLAIF)](../assets/constitutionalai-bai2022-fig1.png)
+*Abbildung 1 aus Bai et al. (2022) — der Constitutional-AI-Prozess: eine Supervised-Learning-Phase (oben, generieren → kritisieren → überarbeiten) gefolgt von einer Reinforcement-Learning-Phase (unten, KI-Feedback trainiert ein Präferenzmodell, das für RLAIF genutzt wird). Aus dem Paper für die Bildungsnutzung in diesem Kurs wiedergegeben.*
+
+Das `guardrail`, das ihr in der Übung unten hinzufügt, ist eine viel kleinere Version derselben Idee: eine Prüfung, die die Ausgabe eines Agenten validiert und ihre Überarbeitung erzwingen kann, statt dem ersten Entwurf blind zu vertrauen.
+
 ## In diesem Repo
 
 CrewAIs `Task` unterstützt einen `guardrail`-Parameter — eine Funktion (oder eine natürlichsprachliche Beschreibung), die die Ausgabe validiert, bevor der nächste Task läuft. Nichts in diesem Repo nutzt das bisher, was es zu einer guten Übung macht: aktuell schreibt `analysis_task` bereitwillig einen Report aus schlechter Eingabe, wenn der `researcher`-Agent ein dünnes oder themenfremdes Ergebnis liefert — ohne jede Prüfung dazwischen.

@@ -8,6 +8,16 @@ So far, every tool in this crew is Python code living inside this repo. **MCP (M
 
 The payoff: a tool built once as an MCP server works with CrewAI, LangGraph, or any other MCP-compatible framework — versus a `BaseTool` subclass that only works in CrewAI.
 
+## Original references
+
+Both protocols are industry specifications rather than peer-reviewed papers, so cite them as technical specs:
+
+> Anthropic (2024). *Model Context Protocol Specification*. https://modelcontextprotocol.io/specification
+
+> Google (2025). *Agent2Agent (A2A) Protocol Specification*. https://a2a-protocol.org/latest/specification/
+
+No figure here — both are living web specifications without a single canonical paper diagram; see their respective sites for current architecture diagrams.
+
 ## In this repo
 
 Nothing currently uses MCP, but `crewai` (the version installed here) has native support for it via `Agent(mcps=[...])`:

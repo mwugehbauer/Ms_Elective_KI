@@ -11,6 +11,21 @@ Ein **KI-Agent** ist ein LLM, dem drei Dinge gegeben werden, die ein reiner Chat
 
 Ein einzelner LLM-Aufruf beantwortet einen Prompt. Ein Agent kann mehrere Schritte ausführen: nachdenken, ein Tool aufrufen, das Ergebnis betrachten, entscheiden, was als Nächstes zu tun ist, wiederholen bis fertig.
 
+## Originalarbeit
+
+Die formale Definition eines rationalen Agenten (nimmt seine Umgebung über Sensoren wahr, handelt über Aktoren, wählt Handlungen, die das Leistungsmaß maximieren) geht auf das Standard-Lehrbuch der KI zurück:
+
+> Russell, S., & Norvig, P. (2020). *Artificial Intelligence: A Modern Approach* (4. Aufl.), Kapitel 2: Intelligent Agents. Pearson.
+
+Die "Denken, Handeln, Beobachten, Wiederholen"-Schleife, die CrewAI implementiert, ist exakt das Muster, das für LLMs formalisiert wurde in:
+
+> Yao, S., Zhao, J., Yu, D., Du, N., Shafran, I., Narasimhan, K., & Cao, Y. (2023). *ReAct: Synergizing Reasoning and Acting in Language Models*. ICLR 2023. [arXiv:2210.03629](https://arxiv.org/abs/2210.03629)
+
+![ReAct kombiniert Reasoning-Spuren und Handlungen, im Vergleich zu reinem Reasoning- und reinem Acting-Prompting](../assets/react-yao2022-fig1.png)
+*Abbildung 1 aus Yao et al. (2023) — Vergleich von Standard-Prompting, reinem Reasoning (Chain-of-Thought), reinem Acting und ReActs verschränktem Reasoning+Acting auf zwei Aufgaben (HotpotQA, AlfWorld). Aus dem Paper für die Bildungsnutzung in diesem Kurs wiedergegeben.*
+
+Das ist genau die Schleife, die ihr den `researcher`-Agenten in der Übung unten ausführen seht: ein `Thought` (Reasoning), ein `Act` (Tool-Aufruf), eine `Obs` (Beobachtung), wiederholt, bis der Agent entscheidet, dass er fertig ist.
+
 ## In diesem Repo
 
 Öffnet [src/research_crew/crew.py](../../src/research_crew/crew.py). Der `researcher`-Agent ([crew.py:17-23](../../src/research_crew/crew.py#L17-L23)) ist ein vollständiges Minimalbeispiel:

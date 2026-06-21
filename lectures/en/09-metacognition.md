@@ -10,6 +10,17 @@ Metacognition means an agent (or the system around it) reflects on its own outpu
 
 This is different from a guardrail (lecture 06): a guardrail blocks/retries based on a pass/fail check, while metacognition is about *improving quality* through reflection, not gatekeeping.
 
+## Original paper
+
+Linguistic self-reflection — an agent verbally critiquing its own failed attempt and storing that critique to inform the next try — was formalized as a reinforcement signal that doesn't require updating model weights at all:
+
+> Shinn, N., Cassano, F., Berman, E., Gopinath, A., Narasimhan, K., & Yao, S. (2023). *Reflexion: Language Agents with Verbal Reinforcement Learning*. NeurIPS 2023. [arXiv:2303.11366](https://arxiv.org/abs/2303.11366)
+
+![Reflexion diagram: an agent's trajectory is evaluated, a self-reflection is generated from the evaluation and added to memory, and the next trajectory is informed by that reflection](../assets/reflexion-shinn2023-fig1.png)
+*Figure 1 from Shinn et al. (2023) — Reflexion across decision-making, programming, and reasoning tasks: a trajectory is scored by an evaluator, a verbal self-reflection is generated and stored in memory, and the next attempt's trajectory is conditioned on that stored reflection. Reproduced from the paper for educational use in this course.*
+
+The `reviewer` agent you build in the exercise below plays the role of Reflexion's "Self-reflection" step, and feeding its critique back via a guardrail (the stretch goal) is exactly the "next trajectory informed by reflection" loop in the diagram.
+
 ## In this repo
 
 Nothing here does this yet — `analysis_task`'s output goes straight to `output_file='output/report.md'` with no review step ([config/tasks.yaml](../../src/research_crew/config/tasks.yaml)). This is the gap for this exercise.

@@ -6,11 +6,14 @@ This series teaches agentic AI concepts using this repository as the running exa
 
 Every lecture has the same shape:
 - **Concept** — what the idea is and why it matters
+- **Original paper** — the seminal paper (or book/spec) behind the concept, with a reproduced figure where one exists and is openly available
 - **In this repo** — exactly where that concept already shows up in `research_crew`, with file/line references
 - **Exercise** — something students implement or modify themselves
 - **Stretch goal** (optional) — a harder follow-up for students who finish early
 
 Students should have [Run the crew](../README.md#run-the-crew) working (via Codespaces or locally) before lecture 1.
+
+Two companion texts are cited across multiple lectures rather than per-session: Russell & Norvig's *Artificial Intelligence: A Modern Approach* (foundational agent definitions, lectures 01 and 03) and Lakshmanan's *Generative AI Design Patterns* (the pattern catalogue behind lectures 03, 07, 08, 09, 10). All other citations are specific arXiv papers or protocol specs, listed per lecture under "Original paper."
 
 ## Sessions
 

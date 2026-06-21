@@ -8,6 +8,17 @@
 
 Das ist wichtig, weil Kontextfenster begrenzt und verrauscht sind — irrelevante Informationen kosten nicht nur Tokens, sie können das LLM auch aktiv von den relevanten Teilen ablenken.
 
+## Originalarbeit
+
+Den empirischen Beleg dafür, *warum* es wichtig ist, wo im Kontextfenster etwas steht — nicht nur, ob es überhaupt enthalten ist — liefert:
+
+> Liu, N. F., Lin, K., Hewitt, J., Paranjape, A., Bevilacqua, M., Petroni, F., & Liang, P. (2024). *Lost in the Middle: How Language Models Use Long Contexts*. Transactions of the Association for Computational Linguistics, 12, 157–173. [arXiv:2307.03172](https://arxiv.org/abs/2307.03172)
+
+![U-förmige Genauigkeitskurve: die Modellgenauigkeit ist am höchsten, wenn das relevante Dokument am Anfang oder Ende des Kontexts steht, und fällt deutlich ab, wenn es in der Mitte steht, bei 20 abgerufenen Dokumenten insgesamt](../assets/lostinmiddle-liu2023-fig1.png)
+*Abbildung 1 aus Liu et al. (2024) — Genauigkeit bei einer Multi-Dokument-QA-Aufgabe als Funktion davon, wo das Dokument mit der Antwort unter 20 abgerufenen Dokumenten steht: am höchsten an erster und letzter Position, am niedrigsten in der Mitte. Aus dem Paper für die Bildungsnutzung in diesem Kurs wiedergegeben.*
+
+Das ist direkt relevant für Übung 2 unten: Wenn ihr dem Analysten eine riesige, ungefilterte Recherche-Ausgabe übergebt, sind genau die nützlichsten Fakten in der *Mitte* davon am wahrscheinlichsten, ignoriert zu werden — unabhängig davon, wie groß Geminis beworbenes Kontextfenster ist.
+
 ## In diesem Repo
 
 Drei Context-Engineering-Mechanismen sind bereits im Einsatz, es lohnt sich, sie explizit zu benennen:

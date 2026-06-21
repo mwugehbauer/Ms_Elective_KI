@@ -10,6 +10,17 @@ Metakognition bedeutet, dass ein Agent (oder das System um ihn herum) über sein
 
 Das unterscheidet sich von einem Guardrail (Lektion 06): ein Guardrail blockiert/wiederholt basierend auf einer Bestehen/Nicht-bestehen-Prüfung, während es bei Metakognition um *Qualitätsverbesserung* durch Reflexion geht, nicht um Zugangskontrolle.
 
+## Originalarbeit
+
+Sprachliche Selbstreflexion — ein Agent kritisiert verbal seinen eigenen gescheiterten Versuch und speichert diese Kritik, um den nächsten Versuch zu informieren — wurde als Verstärkungssignal formalisiert, das überhaupt keine Aktualisierung der Modellgewichte benötigt:
+
+> Shinn, N., Cassano, F., Berman, E., Gopinath, A., Narasimhan, K., & Yao, S. (2023). *Reflexion: Language Agents with Verbal Reinforcement Learning*. NeurIPS 2023. [arXiv:2303.11366](https://arxiv.org/abs/2303.11366)
+
+![Reflexion-Diagramm: die Trajektorie eines Agenten wird bewertet, aus der Bewertung wird eine Selbstreflexion erzeugt und im Gedächtnis gespeichert, und die nächste Trajektorie wird von dieser Reflexion beeinflusst](../assets/reflexion-shinn2023-fig1.png)
+*Abbildung 1 aus Shinn et al. (2023) — Reflexion über Entscheidungsfindungs-, Programmier- und Reasoning-Aufgaben: eine Trajektorie wird von einem Evaluator bewertet, eine verbale Selbstreflexion wird erzeugt und im Gedächtnis gespeichert, und die Trajektorie des nächsten Versuchs wird durch diese gespeicherte Reflexion bedingt. Aus dem Paper für die Bildungsnutzung in diesem Kurs wiedergegeben.*
+
+Der `reviewer`-Agent, den ihr in der Übung unten baut, spielt die Rolle von Reflexions "Self-reflection"-Schritt, und seine Kritik über ein Guardrail zurückzuspeisen (die Zusatzaufgabe) ist genau die im Diagramm gezeigte Schleife "nächste Trajektorie wird von Reflexion beeinflusst".
+
 ## In diesem Repo
 
 Nichts hier tut das bisher — die Ausgabe von `analysis_task` geht direkt nach `output_file='output/report.md'`, ohne Überprüfungsschritt ([config/tasks.yaml](../../src/research_crew/config/tasks.yaml)). Das ist die Lücke für diese Übung.

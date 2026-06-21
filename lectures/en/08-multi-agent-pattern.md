@@ -8,6 +8,17 @@ Beyond a fixed sequential pipeline, CrewAI offers **hierarchical** orchestration
 
 Tradeoff: more flexible, but less predictable and more expensive (the manager makes extra LLM calls to delegate).
 
+## Original paper
+
+The idea of multiple LLM agents collaborating via structured conversation — rather than a single fixed pipeline — was popularized by:
+
+> Wu, Q., Bansal, G., Zhang, J., Wu, Y., Li, B., Zhu, E., Jiang, L., Zhang, X., Zhang, S., Liu, J., Awadallah, A. H., White, R. W., Burger, D., & Wang, C. (2023). *AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation*. [arXiv:2308.08155](https://arxiv.org/abs/2308.08155)
+
+![AutoGen architecture: conversable, customizable agents that converse to solve tasks, in joint chat or hierarchical chat patterns, shown solving a data-plotting task through multi-turn conversation](../assets/autogen-wu2023-fig1.png)
+*Figure 1 from Wu et al. (2023) — AutoGen agents are conversable and customizable (left), can converse in flexible patterns including hierarchical chat (middle), and can include humans in the loop (right, example chat solving a plotting task). Reproduced from the paper for educational use in this course.*
+
+CrewAI's hierarchical process with a `manager_llm` plays the role of the "hierarchical chat" pattern in the middle panel: a coordinating agent decides who talks/acts next, instead of you fixing the order yourself.
+
 ## In this repo
 
 Currently `process=Process.sequential` with exactly two agents in a fixed order ([crew.py:50](../../src/research_crew/crew.py#L50)). To go hierarchical, CrewAI requires either `manager_llm` or `manager_agent`:

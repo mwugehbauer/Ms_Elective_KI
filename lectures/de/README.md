@@ -6,11 +6,14 @@ Diese Reihe vermittelt die Konzepte agentischer KI anhand dieses Repositorys als
 
 Jede Lektion hat denselben Aufbau:
 - **Konzept** — was die Idee ist und warum sie wichtig ist
+- **Originalarbeit** — das bahnbrechende Paper (oder Buch/Spezifikation) hinter dem Konzept, mit reproduzierter Abbildung, wo eine existiert und frei verfügbar ist
 - **In diesem Repo** — wo genau dieses Konzept bereits in `research_crew` auftaucht, mit Datei-/Zeilenverweisen
 - **Übung** — etwas, das Studierende selbst implementieren oder verändern
 - **Zusatzaufgabe** (optional) — eine schwerere Anschlussaufgabe für alle, die früher fertig sind
 
 Studierende sollten [Run the crew](../../README.md#getting-started--choose-one-option) (über Codespaces oder lokal) funktionsfähig haben, bevor Lektion 1 beginnt.
+
+Zwei Begleitwerke werden über mehrere Lektionen hinweg zitiert statt pro Sitzung: Russell & Norvigs *Artificial Intelligence: A Modern Approach* (grundlegende Agentendefinitionen, Lektionen 01 und 03) und Lakshmanans *Generative AI Design Patterns* (der Pattern-Katalog hinter den Lektionen 03, 07, 08, 09, 10). Alle anderen Zitate sind spezifische arXiv-Papers oder Protokollspezifikationen, aufgeführt pro Lektion unter "Originalarbeit".
 
 ## Lektionen
 

@@ -6,6 +6,14 @@
 
 Einen Agenten von "läuft auf meinem Rechner" in den Produktionsbetrieb zu bringen bedeutet: reproduzierbare Umgebungen, Observability darüber, was der Agent tatsächlich tut (nicht nur das Endergebnis), und einen Weg für Nicht-Entwickler, ihn zu nutzen. Nichts davon ändert die Agenten-Logik — es ist die operative Schicht darum herum.
 
+## Originalquelle
+
+Für "Agenten-Betrieb" gibt es kein einzelnes bahnbrechendes Paper wie für RAG oder ReAct — das wird hier als praxisorientiertes Thema behandelt, nicht als Forschungsergebnis:
+
+> Lakshmanan, V. (2025). *Generative AI Design Patterns: Solutions to Common Challenges When Building GenAI Agents and Applications*. O'Reilly Media. (Siehe die Kapitel zu Deployment/Observability.)
+
+Hier keine Abbildung — siehe das Buch für dessen eigene Produktionsarchitektur-Diagramme.
+
 ## In diesem Repo
 
 Dieses Projekt zeigt bereits den vollständigen Stack:

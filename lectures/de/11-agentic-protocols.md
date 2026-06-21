@@ -8,6 +8,16 @@ Bisher ist jedes Tool in dieser Crew Python-Code, der in diesem Repo lebt. **MCP
 
 Der Vorteil: ein einmal als MCP-Server gebautes Tool funktioniert mit CrewAI, LangGraph oder jedem anderen MCP-kompatiblen Framework — im Gegensatz zu einer `BaseTool`-Unterklasse, die nur in CrewAI funktioniert.
 
+## Originalquellen
+
+Beide Protokolle sind Industriespezifikationen statt peer-reviewter Papers, daher zitieren wir sie als technische Spezifikationen:
+
+> Anthropic (2024). *Model Context Protocol Specification*. https://modelcontextprotocol.io/specification
+
+> Google (2025). *Agent2Agent (A2A) Protocol Specification*. https://a2a-protocol.org/latest/specification/
+
+Hier keine Abbildung — beides sind lebende Web-Spezifikationen ohne ein einzelnes kanonisches Paper-Diagramm; aktuelle Architekturdiagramme findet ihr auf den jeweiligen Webseiten.
+
 ## In diesem Repo
 
 Aktuell nutzt nichts MCP, aber `crewai` (die hier installierte Version) hat native Unterstützung dafür über `Agent(mcps=[...])`:

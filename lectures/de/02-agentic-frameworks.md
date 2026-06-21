@@ -13,6 +13,17 @@ Ein agentisches *Framework* gibt euch wiederverwendbare Bausteine, damit ihr die
 
 Andere Frameworks (LangGraph, AutoGen, Microsoft Agent Framework, OpenAIs Agents SDK) modellieren dieselben Ideen unterschiedlich — CrewAIs charakteristische Entscheidung ist die explizite Trennung von `Agent`/`Task`/`Crew` sowie YAML-gesteuerte Konfiguration.
 
+## Originalarbeit
+
+CrewAIs Aufteilung in `Agent`/`Task`/`Crew` ist eine konkrete Umsetzung eines allgemeineren, vereinheitlichenden Frameworks, das in der LLM-Agenten-Literatur vorgeschlagen wurde:
+
+> Wang, L., Ma, C., Feng, X., Zhang, Z., Yang, H., Zhang, J., Chen, Z., Tang, J., Chen, X., Lin, Y., Zhao, W. X., Wei, Z., & Wen, J. (2023). *A Survey on Large Language Model based Autonomous Agents*. [arXiv:2308.11432](https://arxiv.org/abs/2308.11432)
+
+![Vereinheitlichtes Framework für die Architektur von LLM-basierten autonomen Agenten: Profile, Memory, Planning, Action Module](../assets/agentsurvey-wang2023-fig2.png)
+*Abbildung 2 aus Wang et al. (2023) — ein vereinheitlichtes Framework für die Architektur von LLM-Agenten: die Module Profile, Memory, Planning und Action. Aus dem Paper für die Bildungsnutzung in diesem Kurs wiedergegeben.*
+
+Übertragen auf CrewAI: das `role`/`goal`/`backstory` eines `Agent` in `agents.yaml` ist das **Profile**-Modul; `tools` plus die Task-Schleife ist das **Action**-Modul; spätere Lektionen behandeln **Memory** (13) und **Planning** (07) als eigene CrewAI-Funktionen.
+
 ## In diesem Repo
 
 Öffnet [src/research_crew/crew.py](../../src/research_crew/crew.py) von oben bis unten — es ist bewusst kurz gehalten. Ordnet jeden Teil dem Konzept zu:

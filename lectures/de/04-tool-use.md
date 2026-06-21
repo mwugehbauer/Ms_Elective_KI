@@ -11,6 +11,17 @@ Jedes CrewAI-Tool braucht:
 - ein **Eingabeschema** (ein Pydantic-Modell, das die Argumente beschreibt)
 - eine `_run()`-Methode mit der eigentlichen Implementierung
 
+## Originalarbeit
+
+Die Idee, dass ein Sprachmodell selbst lernen kann, *wann* es ein Tool aufruft, *welches* Tool, und *welche Argumente* es übergibt — statt dass ein Mensch hartcodiert, wann Tools ausgelöst werden — wurde demonstriert in:
+
+> Schick, T., Dwivedi-Yu, J., Dessì, R., Raileanu, R., Lomeli, M., Zettlemoyer, L., Cancedda, N., & Scialom, T. (2023). *Toolformer: Language Models Can Teach Themselves to Use Tools*. [arXiv:2302.04761](https://arxiv.org/abs/2302.04761)
+
+![Toolformer-Beispiele: das Modell fügt API-Aufrufe für ein QA-System, einen Taschenrechner, ein Übersetzungssystem und eine Wikipedia-Suchmaschine in seinen eigenen generierten Text ein](../assets/toolformer-schick2023-fig1.png)
+*Abbildung 1 aus Schick et al. (2023) — Toolformer entscheidet autonom, verschiedene APIs aufzurufen (ein Frage-Antwort-System, einen Taschenrechner, ein maschinelles Übersetzungssystem und eine Wikipedia-Suchmaschine), um benötigte Informationen zu erhalten. Aus dem Paper für die Bildungsnutzung in diesem Kurs wiedergegeben.*
+
+`SerperDevTool` in dieser Crew spielt dieselbe Rolle wie die Wikipedia-Such-API in der Abbildung — das LLM entscheidet selbst, wann eine Suche nötig ist, und formuliert die Anfrage, genau wie die `[WikiSearch(...)]`-Aufrufe oben.
+
 ## In diesem Repo
 
 [src/research_crew/tools/custom_tool.py](../../src/research_crew/tools/custom_tool.py) ist eine Vorlage, noch nicht in die Crew eingebunden:

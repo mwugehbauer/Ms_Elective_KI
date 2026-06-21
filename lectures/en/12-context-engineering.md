@@ -8,6 +8,17 @@
 
 This matters because context windows are finite and noisy — irrelevant information doesn't just cost tokens, it can actively distract the LLM from the relevant parts.
 
+## Original paper
+
+The empirical case for *why* what you put where in the context window matters — not just whether it's there at all — was made in:
+
+> Liu, N. F., Lin, K., Hewitt, J., Paranjape, A., Bevilacqua, M., Petroni, F., & Liang, P. (2024). *Lost in the Middle: How Language Models Use Long Contexts*. Transactions of the Association for Computational Linguistics, 12, 157–173. [arXiv:2307.03172](https://arxiv.org/abs/2307.03172)
+
+![U-shaped accuracy curve: model accuracy is highest when the relevant document is at the start or end of the context, and drops significantly when it's in the middle, for 20 total retrieved documents](../assets/lostinmiddle-liu2023-fig1.png)
+*Figure 1 from Liu et al. (2024) — accuracy on a multi-document QA task as a function of where the document containing the answer sits among 20 retrieved documents: highest at the first and last positions, lowest in the middle. Reproduced from the paper for educational use in this course.*
+
+This is directly relevant to exercise 2 below: if you pass the analyst an enormous, unfiltered research output, the most useful facts in the *middle* of it are exactly the ones most likely to get ignored — regardless of how large Gemini's advertised context window is.
+
 ## In this repo
 
 Three context-engineering mechanisms are already in use, worth identifying explicitly:

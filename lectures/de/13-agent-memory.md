@@ -11,6 +11,17 @@ Gedächtnis (Memory) lässt einen Agenten Informationen *über* Läufe hinweg be
 
 Das unterscheidet sich von RAG (Lektion 05): RAG ruft aus von euch bereitgestellten Dokumenten ab; Memory ruft aus dem ab, was die *Crew selbst* zuvor gesagt oder gelernt hat.
 
+## Originalarbeit
+
+Die Architektur hinter "speichere alles, was passiert, reflektiere periodisch darüber, rufe relevante Teile ab, um zukünftiges Verhalten zu informieren" — was im Wesentlichen das ist, was CrewAIs Kurzzeit-/Langzeit-/Entitätsgedächtnis implementiert — wurde eingeführt in:
+
+> Park, J. S., O'Brien, J., Cai, C. J., Morris, M. R., Liang, P., & Bernstein, M. S. (2023). *Generative Agents: Interactive Simulacra of Human Behavior*. Proceedings of the 36th Annual ACM Symposium on User Interface Software and Technology (UIST '23). [arXiv:2304.03442](https://arxiv.org/abs/2304.03442)
+
+![Architektur generativer Agenten: Perceive speist einen Memory Stream, der Retrieve unterstützt, abgerufene Erinnerungen fließen in Plan und Act, mit einer Feedback-Schleife zurück in den Memory Stream](../assets/genagents-park2023-fig3.png)
+*Abbildung 3 aus Park et al. (2023) — die Architektur generativer Agenten: wahrgenommene Ereignisse fließen in einen Memory Stream, relevante Erinnerungen werden abgerufen, um Planning und Acting zu informieren, und die Ergebnisse fließen zurück in den Stream. Aus dem Paper für die Bildungsnutzung in diesem Kurs wiedergegeben.*
+
+CrewAI implementiert den "Reflexions"-Schritt (viele Erinnerungen zu übergeordneten Einsichten synthetisieren) nicht so explizit wie dieses Paper, aber die Kernschleife — ins Gedächtnis schreiben, relevante Teile abrufen, sie die nächste Handlung beeinflussen lassen — ist dieselbe, die `memory=True` für diese Crew aktiviert.
+
 ## In diesem Repo
 
 Memory ist aktuell ausgeschaltet — als wir das Crew-Objekt früher in der Einrichtung dieses Projekts ausgegeben haben, zeigte es `memory=False`, `short_term_memory=None`, `long_term_memory=None`, `entity_memory=None`. Es einzuschalten ist eine Änderung von einer Zeile in [crew.py](../../src/research_crew/crew.py):

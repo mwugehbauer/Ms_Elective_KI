@@ -8,6 +8,17 @@ RAG (Retrieval-Augmented Generation) gives an agent access to specific documents
 
 The part that trips people up: **embeddings are a separate model from the chat LLM**. You can use Gemini for chat and a totally different provider for embeddings — or accidentally default to a provider you never configured.
 
+## Original paper
+
+RAG was introduced as a way to combine a pretrained parametric LLM with a non-parametric retriever over an external index, instead of relying purely on what's baked into the model's weights:
+
+> Lewis, P., Perez, E., Piktus, A., Petroni, F., Karpukhin, V., Goyal, N., Küttler, H., Lewis, M., Yih, W., Rocktäschel, T., Riedel, S., & Kiela, D. (2020). *Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks*. Advances in Neural Information Processing Systems 33 (NeurIPS 2020), 9459–9474. [arXiv:2005.11401](https://arxiv.org/abs/2005.11401)
+
+![RAG architecture: a query encoder and retriever (non-parametric) feed top-k documents into a generator (parametric), which marginalizes over them to produce the final answer](../assets/rag-lewis2020-fig1.png)
+*Figure 1 from Lewis et al. (2020) — the RAG architecture: a Query Encoder + Retriever (non-parametric, the document index) feeds retrieved documents into a Generator (parametric, the seq2seq model), which marginalizes its prediction over them. Reproduced from the paper for educational use in this course.*
+
+The exercise below builds the CrewAI equivalent of this diagram: `TextFileKnowledgeSource` is the retriever/document index, and the `analyst` agent's LLM is the generator that the retrieved chunks get fed into.
+
 ## In this repo
 
 [crew.py:48-59](../../src/research_crew/crew.py#L48-L59) already configures the embedder, but doesn't use it yet:

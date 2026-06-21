@@ -6,6 +6,17 @@
 
 Instead of an agent improvising step-by-step, a **planner** first produces an explicit plan — a sequence of steps — before any task executes. This trades a bit of latency/cost up front for more predictable, reviewable execution: you can read the plan and catch a bad approach before the agent burns tool calls and tokens on it.
 
+## Original paper
+
+Planning-as-prompting was formalized as a deliberate search over multiple reasoning paths — instead of committing to one left-to-right chain of thought — in:
+
+> Yao, S., Yu, D., Zhao, J., Shafran, I., Griffiths, T. L., Cao, Y., & Narasimhan, K. (2023). *Tree of Thoughts: Deliberate Problem Solving with Large Language Models*. [arXiv:2305.10601](https://arxiv.org/abs/2305.10601)
+
+![Comparison of Input-Output prompting, Chain-of-Thought, Self-Consistency with CoT, and Tree of Thoughts, showing ToT exploring and backtracking over a tree of intermediate thoughts](../assets/tot-yao2023-fig1.png)
+*Figure 1 from Yao et al. (2023) — comparing (a) standard input-output prompting, (b) Chain-of-Thought, (c) Self-Consistency with CoT (majority vote over several chains), and (d) Tree of Thoughts, which explores and can backtrack over a tree of intermediate "thoughts" before committing to an output. Reproduced from the paper for educational use in this course.*
+
+CrewAI's `planning=True` doesn't build a full search tree like ToT — it's closer to (b), a single upfront plan — but it's solving the same underlying problem: don't commit to the first reasoning path the LLM produces without giving it a chance to consider the task structure first.
+
 ## In this repo
 
 CrewAI builds this in at the `Crew` level via two fields (`crew.py` doesn't use them yet):
