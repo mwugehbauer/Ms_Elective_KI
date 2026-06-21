@@ -1,4 +1,6 @@
 # src/research_crew/crew.py
+import os
+
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 from crewai_tools import SerperDevTool
@@ -48,4 +50,11 @@ class ResearchCrew():
             tasks=self.tasks,
             process=Process.sequential,
             verbose=True,
+            embedder={
+                "provider": "google-generativeai",
+                "config": {
+                    "api_key": os.getenv("GEMINI_API_KEY"),
+                    "model_name": "gemini-embedding-001",
+                },
+            },
         )
