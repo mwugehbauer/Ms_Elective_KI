@@ -1,6 +1,11 @@
 {
   "name": "research_crew",
   "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "features": {
+    "ghcr.io/devcontainers/features/sshd:1": {
+      "version": "latest"
+    }
+  },
   "postCreateCommand": "pip install uv && uv sync",
   "customizations": {
     "vscode": {
