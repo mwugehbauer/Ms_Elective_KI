@@ -2,6 +2,19 @@
 
 Welcome to the ResearchCrew Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
 
+## Run in GitHub Codespaces
+
+No local install needed. Click **Code → Create codespace on master** on the repo page. The container automatically installs `uv` and runs `uv sync`.
+
+Once it's ready, add your API keys one of two ways:
+- **Codespaces secrets (recommended for a class):** in your GitHub account/org settings under Codespaces → Secrets, add `GEMINI_API_KEY` and `SERPER_API_KEY`. They'll be available as environment variables in every codespace automatically.
+- **Local `.env` file:** copy `.env.example` to `.env` inside the codespace and fill in your keys.
+
+Then run:
+```bash
+uv run research_crew
+```
+
 ## Installation
 
 Ensure you have Python >=3.10 <3.14 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
