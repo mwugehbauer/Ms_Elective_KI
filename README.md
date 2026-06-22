@@ -34,22 +34,22 @@ This repo's working crew (`researcher` → `analyst`, sequential) is the running
 
 ## Use cases to pick from
 
-For the team assignment (see below), you design your own crew for a topic of your choice. All ten ideas need **zero structural changes** to get started — only the `topic` string — because the researcher/analyst roles are already topic-agnostic. Pick one, or propose your own:
+For the team assignment (see below), you design your own crew for a use case of your choice — including your own agent roles and task flow, not the starter repo's `researcher`/`analyst` relabeled with a new topic. You're reusing the same CrewAI mechanics already in this repo (`Agent`/`Task`/`Crew`/`Process`, the same `agents.yaml`/`tasks.yaml` files) — never rewriting code from scratch, just designing new content for it. Pick one, or propose your own; the role splits below are starting points, not specs — push back on them if your topic calls for something different:
 
-| # | Use case | Example topic | Natural tool to add | Natural RAG source to add |
+| # | Use case | Example topic & suggested role split | Natural tool to add | Natural RAG source to add |
 | --- | --- | --- | --- | --- |
-| 1 | Competitive landscape analysis | "Competitive landscape for [industry]" | Web search / scraping | Market-positioning brief (PDF) |
-| 2 | Regulatory impact briefing | "EU AI Act impact on SaaS startups" | Web search | The regulation text itself |
-| 3 | Academic literature review | "Recent advances in [CS/AI subtopic]" | `ArxivPaperTool` | A seminal paper's PDF |
-| 4 | Job market & skills trend report | "In-demand skills for [tech field]" | Web search / job search tool | A skills-framework doc |
-| 5 | Startup due-diligence memo | "Due diligence on [startup]" | Web search | The startup's pitch deck (PDF) |
-| 6 | Personalized travel planner | "Travel plan for [destination]" | Web search | Reuse `knowledge/user_preference.txt` |
-| 7 | Product sentiment synthesis | "Customer sentiment on [product category]" | Web search / scraping | The product's FAQ/support docs |
-| 8 | ESG/sustainability risk briefing | "ESG risks for [company/sector]" | Web search | The company's sustainability report |
-| 9 | Personal finance topic explainer | "ETFs vs. individual stocks" | Web search | A fund prospectus or glossary |
-| 10 | News digest on an ongoing story | "Weekly digest on [news topic]" | Web search / news search tool | A backgrounder doc |
+| 1 | Competitive landscape analysis | "Competitive landscape for [industry]"<br>*Market Scout → Positioning Strategist* | Web search / scraping | Market-positioning brief (PDF) |
+| 2 | Regulatory impact briefing | "EU AI Act impact on SaaS startups"<br>*Policy Tracker → Compliance Strategist* | Web search | The regulation text itself |
+| 3 | Academic literature review | "Recent advances in [CS/AI subtopic]"<br>*Literature Scout → Synthesis Writer* | `ArxivPaperTool` | A seminal paper's PDF |
+| 4 | Job market & skills trend report | "In-demand skills for [tech field]"<br>*Labor Market Researcher → Workforce Strategist* | Web search / job search tool | A skills-framework doc |
+| 5 | Startup due-diligence memo | "Due diligence on [startup]"<br>*Diligence Researcher → Investment Analyst* | Web search | The startup's pitch deck (PDF) |
+| 6 | Personalized travel planner | "Travel plan for [destination]"<br>*Destination Scout → Itinerary Planner* | Web search | Reuse `knowledge/user_preference.txt` |
+| 7 | Product sentiment synthesis | "Customer sentiment on [product category]"<br>*Voice-of-Customer Researcher → Product Strategist* | Web search / scraping | The product's FAQ/support docs |
+| 8 | ESG/sustainability risk briefing | "ESG risks for [company/sector]"<br>*ESG Researcher → Risk Assessor* | Web search | The company's sustainability report |
+| 9 | Personal finance topic explainer | "ETFs vs. individual stocks"<br>*Finance Researcher → Plain-Language Educator* | Web search | A fund prospectus or glossary |
+| 10 | News digest on an ongoing story | "Weekly digest on [news topic]"<br>*News Tracker → Digest Editor* | Web search / news search tool | A backgrounder doc |
 
-Full detail (why each is low-friction, and exactly what changes at each milestone) is in [exercises/en/assignment-milestones.md](exercises/en/assignment-milestones.md).
+Full detail (why each is low-friction on the code side despite the new role design, and exactly what changes at each milestone) is in [exercises/en/assignment-milestones.md](exercises/en/assignment-milestones.md).
 
 ## Getting started — choose one option
 

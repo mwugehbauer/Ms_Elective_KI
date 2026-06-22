@@ -2,36 +2,36 @@
 
 🇬🇧 **English** (this page) · 🇩🇪 [Deutsch](../de/assignment-milestones.md)
 
-Pick a topic for your crew before M0 — anything a two-agent research/analysis pipeline could plausibly tackle (a market, a technology, a policy question, a historical case). You'll keep the same topic through every milestone.
+Pick a use case for your crew before M0 — anything a two-agent pipeline could plausibly tackle (a market, a technology, a policy question, a historical case). You'll keep the same use case through every milestone.
 
-All ten ideas below need **zero structural changes at M0** — only the `topic` string (and optionally `agents.yaml` wording) — because the researcher/analyst roles and the `research_task → analysis_task` dependency are already topic-agnostic via the `{topic}` placeholder. What differs is how naturally each one extends into M1 (tools) and M2 (RAG):
+All ten ideas below reuse the same CrewAI mechanics already in this repo (`Agent`/`Task`/`Crew`/`Process`, a sequential pipeline, the same `agents.yaml`/`tasks.yaml` files) — so you're never rewriting code from scratch. What changes is the content: at M0, you design your own agent roles, goals, and backstories suited to the use case, and a task flow to match — **not** the starter repo's `researcher`/`analyst` relabeled with a new topic. The role-split suggestions below are a starting point, not a spec — push back on them if a different split fits your topic better. What differs between use cases is how naturally each one extends into M1 (tools) and M2 (RAG):
 
-| # | Use case | M0 topic example | Natural M1 tool | Natural M2 RAG source |
+| # | Use case | Example topic & suggested role split | Natural M1 tool | Natural M2 RAG source |
 | --- | --- | --- | --- | --- |
-| 1 | Competitive landscape analysis | "Competitive landscape for [industry]" | Keep `SerperDevTool`, or add `ScrapeWebsiteTool` for competitor pages | Team's own market-positioning brief (PDF) |
-| 2 | Regulatory impact briefing | "EU AI Act impact on SaaS startups" | Web search for recent updates | The actual regulation text itself — a great large-document RAG case |
-| 3 | Academic literature review | "Recent advances in [CS/AI subtopic]" | `ArxivPaperTool` (already in the README's tool table, no new signup) | One seminal paper's PDF for deep Q&A |
-| 4 | Job market & skills trend report | "In-demand skills for [tech field] in 2026" | Web search, or `SerplyJobSearchTool` | A curriculum/skills-framework doc |
-| 5 | Startup due-diligence memo | "Due diligence on [hypothetical startup]" | Web search | The startup's own pitch deck (PDF) |
-| 6 | Personalized travel planner | "Travel plan for [destination]" | Web search | Reuse `knowledge/user_preference.txt` as-is, repurposed for travel preferences — the lowest-friction RAG onramp of the whole list |
-| 7 | Product sentiment synthesis | "Customer sentiment on [product category]" | Web search / scraping tool | The product's own FAQ/support docs |
-| 8 | ESG/sustainability risk briefing | "ESG risks for [company/sector]" | Web search | The company's own sustainability report (PDF) |
-| 9 | Personal finance topic explainer | "ETFs vs. individual stocks for beginners" | Web search | A fund prospectus or glossary doc |
-| 10 | News digest on an ongoing story | "Weekly digest on [ongoing news topic]" | Web search / `SerplyNewsSearchTool` | A backgrounder doc giving context predating the news window |
+| 1 | Competitive landscape analysis | "Competitive landscape for [industry]"<br>*Market Scout → Positioning Strategist* | Keep `SerperDevTool`, or add `ScrapeWebsiteTool` for competitor pages | Team's own market-positioning brief (PDF) |
+| 2 | Regulatory impact briefing | "EU AI Act impact on SaaS startups"<br>*Policy Tracker → Compliance Strategist* | Web search for recent updates | The actual regulation text itself — a great large-document RAG case |
+| 3 | Academic literature review | "Recent advances in [CS/AI subtopic]"<br>*Literature Scout → Synthesis Writer* | `ArxivPaperTool` (already in the README's tool table, no new signup) | One seminal paper's PDF for deep Q&A |
+| 4 | Job market & skills trend report | "In-demand skills for [tech field] in 2026"<br>*Labor Market Researcher → Workforce Strategist* | Web search, or `SerplyJobSearchTool` | A curriculum/skills-framework doc |
+| 5 | Startup due-diligence memo | "Due diligence on [hypothetical startup]"<br>*Diligence Researcher → Investment Analyst* | Web search | The startup's own pitch deck (PDF) |
+| 6 | Personalized travel planner | "Travel plan for [destination]"<br>*Destination Scout → Itinerary Planner* | Web search | Reuse `knowledge/user_preference.txt` as-is, repurposed for travel preferences — the lowest-friction RAG onramp of the whole list |
+| 7 | Product sentiment synthesis | "Customer sentiment on [product category]"<br>*Voice-of-Customer Researcher → Product Strategist* | Web search / scraping tool | The product's own FAQ/support docs |
+| 8 | ESG/sustainability risk briefing | "ESG risks for [company/sector]"<br>*ESG Researcher → Risk Assessor* | Web search | The company's own sustainability report (PDF) |
+| 9 | Personal finance topic explainer | "ETFs vs. individual stocks for beginners"<br>*Finance Researcher → Plain-Language Educator* | Web search | A fund prospectus or glossary doc |
+| 10 | News digest on an ongoing story | "Weekly digest on [ongoing news topic]"<br>*News Tracker → Digest Editor* | Web search / `SerplyNewsSearchTool` | A backgrounder doc giving context predating the news window |
 
 ## M0: Baseline
 
 **Unlocked by:** exercise 01
 
-**Add:** two agents, a sequential process, no tools beyond what's already wired in the starter repo.
+**Add:** two agents *you design* — your own roles, goals, and backstories suited to your use case (the table's role-split suggestions are a starting point, not a requirement) — **not** the starter repo's `researcher`/`analyst` relabeled with a new topic. Keep the same mechanics: a sequential process, no tools beyond what's already wired in the starter repo.
 
-**Update:** `agents.yaml`, `tasks.yaml`, and `DESIGN.md` (Overview + Architecture: Process, Agents, Tasks).
+**Update:** `agents.yaml`, `tasks.yaml`, and `DESIGN.md` (Overview + Architecture: Process, Agents, Tasks). Same files as the starter repo — you're changing their content, not the surrounding code in `crew.py`.
 
 **Risk & constraint prompts** (answer in `DESIGN.md`'s Risks/Constraints tables):
-- Why this specific role split? What does each agent need from the other to do its job?
+- Why this specific role split, and why does it fit your use case better than the table's suggestion (or better than the starter repo's `researcher`/`analyst` split)? What does each agent need from the other to do its job?
 - What happens if one agent's output is subtly wrong — does the next agent have any way to notice, or does it trust it blindly?
 
-**Suggested user story starter:** *"As a [reader of the final report], I want the analyst's conclusions to be traceable back to the researcher's findings, so that I can judge whether the conclusion is actually supported."*
+**Suggested user story starter:** *"As a [stakeholder reading the final output], I want the second agent's conclusions to be traceable back to the first agent's findings, so that I can judge whether the conclusion is actually supported."*
 
 ## M1: Tools
 
@@ -45,7 +45,7 @@ All ten ideas below need **zero structural changes at M0** — only the `topic` 
 - What happens if the tool is rate-limited, returns nothing useful, or the API is down mid-run? Does your crew degrade gracefully or just fail?
 - Does the tool's description make misuse likely (e.g. the agent calling it with bad arguments, or not calling it when it should)?
 
-**Suggested user story starter:** *"As a [stakeholder], I want the researcher to pull current information rather than relying on the LLM's training data, so that the report reflects up-to-date facts."*
+**Suggested user story starter:** *"As a [stakeholder], I want the agent gathering information to pull current information rather than relying on the LLM's training data, so that the output reflects up-to-date facts."*
 
 ## M2: RAG (interim submission)
 

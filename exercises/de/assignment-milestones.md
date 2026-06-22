@@ -2,36 +2,36 @@
 
 🇩🇪 **Deutsch** (diese Seite) · 🇬🇧 [English](../en/assignment-milestones.md)
 
-Wählt ein Thema für eure Crew vor M0 — alles, was eine zweistufige Recherche-/Analyse-Pipeline plausibel angehen könnte (ein Markt, eine Technologie, eine politische Frage, ein historischer Fall). Ihr behaltet dasselbe Thema über alle Meilensteine hinweg.
+Wählt einen Anwendungsfall für eure Crew vor M0 — alles, was eine zweistufige Pipeline plausibel angehen könnte (ein Markt, eine Technologie, eine politische Frage, ein historischer Fall). Ihr behaltet denselben Anwendungsfall über alle Meilensteine hinweg.
 
-Alle zehn Ideen unten brauchen bei M0 **keine strukturellen Änderungen** — nur den `topic`-String (und optional Formulierungen in `agents.yaml`) — weil die Rollen von Researcher/Analyst und die `research_task → analysis_task`-Abhängigkeit über den `{topic}`-Platzhalter bereits themenunabhängig sind. Unterschiedlich ist, wie natürlich sich jede Idee zu M1 (Tools) und M2 (RAG) erweitern lässt:
+Alle zehn Ideen unten nutzen dieselben CrewAI-Mechanismen, die bereits in diesem Repo stecken (`Agent`/`Task`/`Crew`/`Process`, eine sequentielle Pipeline, dieselben `agents.yaml`/`tasks.yaml`-Dateien) — ihr schreibt also nie Code von Grund auf neu. Was sich ändert, ist der Inhalt: Bei M0 entwerft ihr eigene Agentenrollen, -ziele und -backstories passend zum Anwendungsfall, sowie einen passenden Task-Flow — **nicht** das `researcher`/`analyst`-Paar des Starter-Repos mit neuem Thema. Die Rollensplit-Vorschläge unten sind ein Ausgangspunkt, keine Vorgabe — widersprecht ihnen, wenn ein anderer Split besser zu eurem Thema passt. Unterschiedlich ist, wie natürlich sich jede Idee zu M1 (Tools) und M2 (RAG) erweitern lässt:
 
-| # | Anwendungsfall | M0-Themenbeispiel | Naheliegendes M1-Tool | Naheliegende M2-RAG-Quelle |
+| # | Anwendungsfall | Themenbeispiel & vorgeschlagener Rollensplit | Naheliegendes M1-Tool | Naheliegende M2-RAG-Quelle |
 | --- | --- | --- | --- | --- |
-| 1 | Wettbewerbsanalyse | "Wettbewerbslandschaft für [Branche]" | `SerperDevTool` behalten, oder `ScrapeWebsiteTool` für Wettbewerber-Seiten | Eigenes Markt-Positionierungs-Briefing (PDF) |
-| 2 | Regulatorisches Wirkungs-Briefing | "Auswirkungen des EU AI Act auf SaaS-Startups" | Websuche nach aktuellen Updates | Der eigentliche Verordnungstext — ein gutes Beispiel für RAG mit langen Dokumenten |
-| 3 | Akademischer Literaturüberblick | "Aktuelle Entwicklungen in [CS/KI-Teilgebiet]" | `ArxivPaperTool` (bereits in der Tool-Tabelle des READMEs, keine neue Anmeldung nötig) | Das PDF eines bahnbrechenden Papers für Detail-Fragen |
-| 4 | Arbeitsmarkt- & Skills-Trendreport | "Gefragte Skills für [Tech-Feld] 2026" | Websuche, oder `SerplyJobSearchTool` | Ein Curriculum-/Skills-Framework-Dokument |
-| 5 | Startup-Due-Diligence-Memo | "Due Diligence für [hypothetisches Startup]" | Websuche | Das eigene Pitch-Deck des Startups (PDF) |
-| 6 | Personalisierter Reiseplaner | "Reiseplan für [Reiseziel]" | Websuche | `knowledge/user_preference.txt` unverändert weiterverwenden, umgewidmet für Reisepräferenzen — der reibungsärmste RAG-Einstieg der ganzen Liste |
-| 7 | Synthese von Produkt-Stimmungsbildern | "Kundenstimmung zu [Produktkategorie]" | Websuche/Scraping-Tool | Die eigenen FAQ-/Support-Dokumente des Produkts |
-| 8 | ESG-/Nachhaltigkeits-Risiko-Briefing | "ESG-Risiken für [Unternehmen/Branche]" | Websuche | Der eigene Nachhaltigkeitsbericht des Unternehmens (PDF) |
-| 9 | Erklärstück zu einem Finanzthema | "ETFs vs. Einzelaktien für Einsteiger" | Websuche | Ein Fondsprospekt oder Glossar |
-| 10 | News-Digest zu einer laufenden Geschichte | "Wöchentlicher Digest zu [laufendem Thema]" | Websuche / `SerplyNewsSearchTool` | Ein Hintergrunddokument mit Kontext vor dem News-Zeitraum |
+| 1 | Wettbewerbsanalyse | "Wettbewerbslandschaft für [Branche]"<br>*Market Scout → Positioning Strategist* | `SerperDevTool` behalten, oder `ScrapeWebsiteTool` für Wettbewerber-Seiten | Eigenes Markt-Positionierungs-Briefing (PDF) |
+| 2 | Regulatorisches Wirkungs-Briefing | "Auswirkungen des EU AI Act auf SaaS-Startups"<br>*Policy Tracker → Compliance Strategist* | Websuche nach aktuellen Updates | Der eigentliche Verordnungstext — ein gutes Beispiel für RAG mit langen Dokumenten |
+| 3 | Akademischer Literaturüberblick | "Aktuelle Entwicklungen in [CS/KI-Teilgebiet]"<br>*Literature Scout → Synthesis Writer* | `ArxivPaperTool` (bereits in der Tool-Tabelle des READMEs, keine neue Anmeldung nötig) | Das PDF eines bahnbrechenden Papers für Detail-Fragen |
+| 4 | Arbeitsmarkt- & Skills-Trendreport | "Gefragte Skills für [Tech-Feld] 2026"<br>*Labor Market Researcher → Workforce Strategist* | Websuche, oder `SerplyJobSearchTool` | Ein Curriculum-/Skills-Framework-Dokument |
+| 5 | Startup-Due-Diligence-Memo | "Due Diligence für [hypothetisches Startup]"<br>*Diligence Researcher → Investment Analyst* | Websuche | Das eigene Pitch-Deck des Startups (PDF) |
+| 6 | Personalisierter Reiseplaner | "Reiseplan für [Reiseziel]"<br>*Destination Scout → Itinerary Planner* | Websuche | `knowledge/user_preference.txt` unverändert weiterverwenden, umgewidmet für Reisepräferenzen — der reibungsärmste RAG-Einstieg der ganzen Liste |
+| 7 | Synthese von Produkt-Stimmungsbildern | "Kundenstimmung zu [Produktkategorie]"<br>*Voice-of-Customer Researcher → Product Strategist* | Websuche/Scraping-Tool | Die eigenen FAQ-/Support-Dokumente des Produkts |
+| 8 | ESG-/Nachhaltigkeits-Risiko-Briefing | "ESG-Risiken für [Unternehmen/Branche]"<br>*ESG Researcher → Risk Assessor* | Websuche | Der eigene Nachhaltigkeitsbericht des Unternehmens (PDF) |
+| 9 | Erklärstück zu einem Finanzthema | "ETFs vs. Einzelaktien für Einsteiger"<br>*Finance Researcher → Plain-Language Educator* | Websuche | Ein Fondsprospekt oder Glossar |
+| 10 | News-Digest zu einer laufenden Geschichte | "Wöchentlicher Digest zu [laufendem Thema]"<br>*News Tracker → Digest Editor* | Websuche / `SerplyNewsSearchTool` | Ein Hintergrunddokument mit Kontext vor dem News-Zeitraum |
 
 ## M0: Baseline
 
 **Freigeschaltet durch:** Übung 01
 
-**Hinzufügen:** zwei Agenten, ein sequentieller Prozess, keine Tools über das hinaus, was im Starter-Repo bereits verkabelt ist.
+**Hinzufügen:** zwei Agenten, die **ihr entwerft** — eigene Rollen, Ziele und Backstories passend zu eurem Anwendungsfall (die Rollensplit-Vorschläge in der Tabelle sind ein Ausgangspunkt, keine Pflicht) — **nicht** das `researcher`/`analyst`-Paar des Starter-Repos mit neuem Thema. Behaltet dieselben Mechanismen: ein sequentieller Prozess, keine Tools über das hinaus, was im Starter-Repo bereits verkabelt ist.
 
-**Aktualisieren:** `agents.yaml`, `tasks.yaml`, und `DESIGN.md` (Überblick + Architektur: Prozess, Agenten, Tasks).
+**Aktualisieren:** `agents.yaml`, `tasks.yaml`, und `DESIGN.md` (Überblick + Architektur: Prozess, Agenten, Tasks). Dieselben Dateien wie im Starter-Repo — ihr ändert deren Inhalt, nicht den umgebenden Code in `crew.py`.
 
 **Risiko- und Grenzenfragen** (beantwortet in den Tabellen "Risiken"/"Grenzen" von `DESIGN.md`):
-- Warum genau dieser Rollensplit? Was braucht jeder Agent vom anderen, um seine Aufgabe zu erfüllen?
+- Warum genau dieser Rollensplit, und warum passt er besser zu eurem Anwendungsfall als der Vorschlag der Tabelle (oder als der `researcher`/`analyst`-Split des Starter-Repos)? Was braucht jeder Agent vom anderen, um seine Aufgabe zu erfüllen?
 - Was passiert, wenn die Ausgabe eines Agenten subtil falsch ist — merkt der nächste Agent das überhaupt, oder vertraut er blind?
 
-**Vorschlag für eine User-Story:** *"Als [Leser*in des finalen Reports] möchte ich, dass die Schlussfolgerungen des Analysten auf die Befunde des Researchers zurückverfolgbar sind, damit ich beurteilen kann, ob die Schlussfolgerung tatsächlich belegt ist."*
+**Vorschlag für eine User-Story:** *"Als [Stakeholder, der das Endergebnis liest] möchte ich, dass die Schlussfolgerungen des zweiten Agenten auf die Befunde des ersten Agenten zurückverfolgbar sind, damit ich beurteilen kann, ob die Schlussfolgerung tatsächlich belegt ist."*
 
 ## M1: Tools
 
@@ -45,7 +45,7 @@ Alle zehn Ideen unten brauchen bei M0 **keine strukturellen Änderungen** — nu
 - Was passiert, wenn das Tool rate-limitiert ist, nichts Brauchbares zurückgibt, oder die API mitten im Lauf ausfällt? Degradiert eure Crew kontrolliert, oder scheitert sie einfach?
 - Macht die Tool-Beschreibung Fehlgebrauch wahrscheinlich (z. B. der Agent ruft es mit falschen Argumenten auf, oder ruft es nicht auf, obwohl er sollte)?
 
-**Vorschlag für eine User-Story:** *"Als [Stakeholder] möchte ich, dass der Researcher aktuelle Informationen abruft statt sich auf die Trainingsdaten des LLM zu verlassen, damit der Report aktuelle Fakten widerspiegelt."*
+**Vorschlag für eine User-Story:** *"Als [Stakeholder] möchte ich, dass der Agent, der Informationen sammelt, aktuelle Informationen abruft statt sich auf die Trainingsdaten des LLM zu verlassen, damit das Ergebnis aktuelle Fakten widerspiegelt."*
 
 ## M2: RAG (Zwischenabgabe)
 
