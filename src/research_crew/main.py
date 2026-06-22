@@ -16,6 +16,13 @@ REQUIRED_ENV_VARS = {
     'GEMINI_API_KEY': 'powers embeddings for knowledge/memory features (get one free at https://ai.google.dev)',
 }
 
+# A copy-pasted secret with a trailing newline produces an "Illegal header value" error deep inside
+# litellm that's hard to diagnose — strip whitespace defensively before anything reads these.
+for _key in REQUIRED_ENV_VARS:
+    _value = os.getenv(_key)
+    if _value is not None:
+        os.environ[_key] = _value.strip()
+
 def check_setup():
     """Fail fast with a clear message instead of a deep crewai stack trace."""
     missing = [name for name in REQUIRED_ENV_VARS if not os.getenv(name)]
