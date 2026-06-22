@@ -40,4 +40,4 @@ Add a guardrail (lecture 06) to `analysis_task` that checks the final report for
 
 ---
 
-**Team assignment:** together with lecture 10, this unlocks [**Milestone Final: Production and security**](assignment-milestones.md#final-production-and-security) of the [team assignment](assignment-overview.md) — your final submission, including `RETROSPECTIVE.md`, is due.
+**Team assignment:** together with lecture 10, this unlocks [**Milestone Final: Production and security**](assignment-milestones.md#final-production-and-security) of the [team assignment](assignment-overview.md) — your final submission, including a final Design History entry in `DESIGN.md`, is due.

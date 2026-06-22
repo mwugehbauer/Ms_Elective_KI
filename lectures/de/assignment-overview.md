@@ -37,7 +37,7 @@ Für die tägliche Teamarbeit braucht ihr keine Branches oder Pull Requests — 
 
 Kein Terminal, keine `git add`/`commit`/`push`-Befehle. Alle committen direkt auf `main`.
 
-Um zu vermeiden, dass zwei Personen dieselbe Datei gleichzeitig bearbeiten, **teilt Dateien zwischen Teammitgliedern auf**, nicht nur Aufgaben — z. B. verwaltet eine Person `agents.yaml`, eine andere `tasks.yaml`, eine weitere `RISK_LOG.md`. Falls trotzdem ein Konflikt auftritt, zeigt VS Code eine Merge-Ansicht mit anklickbaren Buttons ("Accept Current / Incoming / Both") — bittet eure Lehrperson einmal um eine kurze Live-Demo davon, damit es niemanden mitten in einer Deadline überrascht.
+Um zu vermeiden, dass zwei Personen dieselbe Datei gleichzeitig bearbeiten, **teilt Dateien zwischen Teammitgliedern auf**, wo es geht — z. B. verwaltet eine Person `agents.yaml`, eine andere `tasks.yaml`. `DESIGN.md` ist eine gemeinsame Datei, zu der alle beitragen — wechselt euch dabei ab, oder committet und synct alle paar Minuten, statt lange parallel in derselben Datei zu arbeiten. Falls trotzdem ein Konflikt auftritt, zeigt VS Code eine Merge-Ansicht mit anklickbaren Buttons ("Accept Current / Incoming / Both") — bittet eure Lehrperson einmal um eine kurze Live-Demo davon, damit es niemanden mitten in einer Deadline überrascht.
 
 Für schnelle Änderungen (z. B. einen `RISK_LOG.md`-Eintrag) könnt ihr Codespaces ganz überspringen: Öffnet die Datei auf github.com, klickt auf das Stift-Icon, bearbeitet sie im Browser und klickt unten auf **"Commit changes"**.
 
@@ -47,10 +47,9 @@ Bei jeder Meilenstein-Deadline ist eure Abgabe der Zustand des `main`-Branchs eu
 
 | Artefakt | Wo | Was es zeigt |
 | --- | --- | --- |
-| Crew-Entwurf | `src/research_crew/config/agents.yaml` + `tasks.yaml` | Agenten/Tasks/Prozess des aktuellen Meilensteins |
-| Risiko- und Grenzenanalyse | `RISK_LOG.md` — pro Meilenstein einen neuen, datierten Abschnitt anfügen, alte nie bearbeiten | Euer sich entwickelndes kritisches Denken |
+| Lauffähige Crew-Konfiguration | `src/research_crew/config/agents.yaml` + `tasks.yaml` (+ `crew.py`, sobald Tools/RAG/Prozess sich ändern) | Die buchstäbliche, lauffähige Version eures Entwurfs |
+| Design-Dokument | `DESIGN.md` — Architektur (Agenten/Tasks/Tools/RAG), Risiken, Grenzen, Sicherheit, Produktions-Aspekte, Design-Historie | Eure vollständige, kritisch geprüfte Entwurfsbegründung, in einem sich entwickelnden Bericht |
 | Backlog | GitHub Issues (nach Epic gelabelt) + ein Projects-Board | Eure User Stories und euer Fortschritt — lebt auf GitHub, nichts zu exportieren |
-| Retrospektive | `RETROSPECTIVE.md` — nur Abschlussabgabe | Was sich seit der Zwischenabgabe verändert hat, und warum |
 | Team-Notizen | `TEAM.md` | Mitglieder und wer was beigetragen hat |
 | Optionaler Bonus | ein funktionierendes `crew.py` + ein erfolgreiches `uv run research_crew` | Nur Zusatzpunkte — nie Pflicht |
 
@@ -58,7 +57,7 @@ Die Abgabe ist einfach **der Zustand des `main`-Branchs eures Team-Repos zur Dea
 
 ## Bewertung
 
-Die Entwurfsdokumente (`agents.yaml`/`tasks.yaml` + `RISK_LOG.md` + Backlog) tragen den weit überwiegenden Teil der Note. Funktionierender Code gibt Bonuspunkte oben drauf, ersetzt aber nie eine dünne oder fehlende Risikoanalyse. Siehe [Meilensteine der Aufgabe](assignment-milestones.md) für die konkreten, pro Phase bewerteten Risikoanalyse-Fragen.
+Die Entwurfsdokumente (`agents.yaml`/`tasks.yaml` + `DESIGN.md` + Backlog) tragen den weit überwiegenden Teil der Note. Funktionierender Code gibt Bonuspunkte oben drauf, ersetzt aber nie eine dünne oder fehlende Risikoanalyse. Siehe [Meilensteine der Aufgabe](assignment-milestones.md) für die konkreten, pro Phase bewerteten Risikoanalyse-Fragen.
 
 ## Agile Praxis: Backlog und User Stories
 

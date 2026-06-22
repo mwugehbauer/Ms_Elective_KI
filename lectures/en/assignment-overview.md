@@ -37,7 +37,7 @@ You don't need branches or pull requests for day-to-day team work — one simple
 
 No terminal, no `git add`/`commit`/`push` commands. Everyone commits straight to `main`.
 
-To avoid two people editing the same file at once, **divide files between teammates** rather than just tasks — e.g. one person owns `agents.yaml`, another `tasks.yaml`, another `RISK_LOG.md`. If a conflict does happen anyway, VS Code shows a merge view with clickable "Accept Current / Incoming / Both" buttons — ask your instructor for a quick live demo of this once, so it doesn't surprise anyone mid-deadline.
+To avoid two people editing the same file at once, **divide files between teammates** where you can — e.g. one person owns `agents.yaml`, another `tasks.yaml`. `DESIGN.md` is one shared file everyone contributes to, so for that one specifically: take turns, or commit-and-sync every few minutes rather than both editing it for a long stretch in parallel. If a conflict does happen anyway, VS Code shows a merge view with clickable "Accept Current / Incoming / Both" buttons — ask your instructor for a quick live demo of this once, so it doesn't surprise anyone mid-deadline.
 
 For quick edits (e.g. a `RISK_LOG.md` entry), you can skip Codespaces entirely: open the file on github.com, click the pencil icon, edit in the browser, and click **"Commit changes"** at the bottom.
 
@@ -47,10 +47,9 @@ At each milestone deadline, your submission is the state of your team repo's `ma
 
 | Artifact | Where | What it shows |
 | --- | --- | --- |
-| Crew design | `src/research_crew/config/agents.yaml` + `tasks.yaml` | Current milestone's agents/tasks/process |
-| Risk & constraint analysis | `RISK_LOG.md` — append a new dated section per milestone, never edit old ones | Your evolving critical thinking |
+| Executable crew config | `src/research_crew/config/agents.yaml` + `tasks.yaml` (+ `crew.py` once tools/RAG/process change) | The literal, runnable version of your design |
+| Design document | `DESIGN.md` — architecture (agents/tasks/tools/RAG), risks, constraints, security, production considerations, design history | Your full design rationale, critically assessed, in one evolving report |
 | Backlog | GitHub Issues (labeled by epic) + a Projects board | Your user stories and progress — lives on GitHub, nothing to export |
-| Retrospective | `RETROSPECTIVE.md` — final submission only | What changed since the interim submission, and why |
 | Team notes | `TEAM.md` | Members and who contributed what |
 | Optional bonus | a working `crew.py` + a successful `uv run research_crew` | Extra credit only — never required |
 
@@ -58,7 +57,7 @@ Submission is simply **the state of your team repo's `main` branch at the deadli
 
 ## Grading
 
-The design documents (`agents.yaml`/`tasks.yaml` + `RISK_LOG.md` + backlog) carry the large majority of the grade. Working code is bonus points on top, never a substitute for a thin or missing risk analysis. See [Assignment Milestones](assignment-milestones.md) for the specific risk-analysis prompts graded at each stage.
+The design documents (`agents.yaml`/`tasks.yaml` + `DESIGN.md` + backlog) carry the large majority of the grade. Working code is bonus points on top, never a substitute for a thin or missing risk analysis. See [Assignment Milestones](assignment-milestones.md) for the specific risk-analysis prompts graded at each stage.
 
 ## Agile practice: backlog and user stories
 

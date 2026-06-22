@@ -40,4 +40,4 @@ Fügt `analysis_task` ein Guardrail (Lektion 06) hinzu, das den finalen Report a
 
 ---
 
-**Team-Aufgabe:** Zusammen mit Vorlesung 10 schaltet diese Vorlesung [**Meilenstein Abschluss: Produktion und Sicherheit**](assignment-milestones.md#abschluss-produktion-und-sicherheit) der [Team-Aufgabe](assignment-overview.md) frei — eure Abschlussabgabe, inklusive `RETROSPECTIVE.md`, ist fällig.
+**Team-Aufgabe:** Zusammen mit Vorlesung 10 schaltet diese Vorlesung [**Meilenstein Abschluss: Produktion und Sicherheit**](assignment-milestones.md#abschluss-produktion-und-sicherheit) der [Team-Aufgabe](assignment-overview.md) frei — eure Abschlussabgabe, inklusive eines letzten Design-Historie-Eintrags in `DESIGN.md`, ist fällig.
