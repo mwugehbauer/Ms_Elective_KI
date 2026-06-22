@@ -8,8 +8,9 @@ from research_crew.crew import ResearchCrew
 os.makedirs('output', exist_ok=True)
 
 REQUIRED_ENV_VARS = {
-    'GEMINI_API_KEY': 'powers the LLM behind every agent (get one free at https://ai.google.dev)',
+    'GROQ_API_KEY': 'powers the LLM behind every agent (get one free at https://console.groq.com/keys)',
     'SERPER_API_KEY': "powers the researcher agent's web search tool (get one free at https://serper.dev)",
+    'GEMINI_API_KEY': 'powers embeddings for knowledge/memory features (get one free at https://ai.google.dev)',
 }
 
 def check_setup():

@@ -21,7 +21,7 @@ No local install needed.
 
 The container automatically installs `uv` and runs `uv sync`.
 
-**Add your API keys via Codespaces secrets (recommended — do this before opening your first codespace):** go to [github.com/settings/codespaces](https://github.com/settings/codespaces) → Codespaces secrets → add `GEMINI_API_KEY` and `SERPER_API_KEY`. They'll be available as environment variables automatically in every codespace you open, on this repo or your fork — no file to create or edit inside the codespace at all.
+**Add your API keys via Codespaces secrets (recommended — do this before opening your first codespace):** go to [github.com/settings/codespaces](https://github.com/settings/codespaces) → Codespaces secrets → add `GROQ_API_KEY` and `SERPER_API_KEY`. They'll be available as environment variables automatically in every codespace you open, on this repo or your fork — no file to create or edit inside the codespace at all. (`GEMINI_API_KEY` is only needed if you do the RAG/memory lectures, which use Gemini for embeddings.)
 
 <details>
 <summary>Alternative: local <code>.env</code> file inside the codespace (only if you can't use Codespaces secrets)</summary>
@@ -47,7 +47,7 @@ Clone the repo, then from its root install the dependencies:
 uv sync
 ```
 
-Copy `.env.example` to `.env` and fill in your `GEMINI_API_KEY` and `SERPER_API_KEY`.
+Copy `.env.example` to `.env` and fill in your `GROQ_API_KEY` and `SERPER_API_KEY` (and `GEMINI_API_KEY` if you'll do the RAG/memory lectures, which use Gemini for embeddings).
 
 Once that's done, continue with [Run the crew](#run-the-crew) below.
 
