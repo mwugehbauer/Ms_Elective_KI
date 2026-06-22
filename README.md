@@ -129,10 +129,7 @@ Locally this opens at `http://localhost:8501`. In a Codespace, port `8501` is au
 
 ## Exercise sessions
 
-7 exercise sessions ([English](exercises/README.md) / [Deutsch](exercises/de/README.md)) cover agent concepts, tools, RAG, multi-agent patterns, production, and security — scoped to what's actually demonstrated in this repo's code. Every session has the same two-part shape:
-
-- **Part 1 — Theory**: the concept and its seminal paper/book, with a reproduced figure where one exists
-- **Part 2 — Practice**: exactly where that concept already shows up in this repo's code, plus a hands-on task and an optional stretch goal
+7 exercise sessions ([English](exercises/README.md) / [Deutsch](exercises/de/README.md)) cover agent concepts, tools, RAG, multi-agent patterns, production, and security — scoped to what's actually demonstrated in this repo's code. Each one starts directly with the practical work, weaving in just enough background from the relevant paper (a short citation and, where one exists, its original figure) to place the concept, then goes straight into where it shows up in this repo's code, a hands-on task, and an optional stretch goal — a hands-on companion to the lecture, not a second lecture.
 
 ## Team assignment
 

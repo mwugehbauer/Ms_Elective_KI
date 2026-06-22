@@ -2,15 +2,9 @@
 
 🇬🇧 **English** (this page) · 🇩🇪 [Deutsch](../de/00-course-setup.md)
 
-## Part 1 — Theory
-
-### Concept
-
 Before writing any agent code, everyone needs an identical, working environment. The two failure modes that waste the most class time are: students stuck on local installs, and students missing API keys. We solve both before exercise 1.
 
-## Part 2 — Practice
-
-### In this repo
+## In this repo
 
 This project supports two setup paths, documented in the main [README](../../README.md#getting-started--choose-one-option):
 
@@ -22,7 +16,7 @@ Either way, you need three API keys before anything will run:
 - `SERPER_API_KEY` — powers the researcher agent's web search tool
 - `GEMINI_API_KEY` — powers embeddings for knowledge/memory features, not the chat LLM (see exercise 03)
 
-### Task
+## Task
 
 1. Pick a setup path (Codespaces or local) and get it running, following the README.
 2. Get your own free API keys:
@@ -38,7 +32,7 @@ Either way, you need three API keys before anything will run:
 
 If a key is missing, `main.py` now fails fast with a clear message naming exactly which key is missing and a link to get one — rather than a deep stack trace from inside `crewai`. If you see that message, fix it and rerun; if step 5 still fails after your keys are set, debug it now — every later exercise assumes this works. Other common first-run issues: a model name typo, hitting a free-tier rate limit (wait a minute and retry), or — if you're on a much older clone of this repo without the `MODEL` default in `main.py` — an `OPENAI_API_KEY is required` error, which means `MODEL` itself never reached the environment (Codespaces secrets bypass `.env.example`'s default value entirely; add `MODEL=groq/llama-3.3-70b-versatile` as a Codespaces secret too, or update `main.py`).
 
-### Stretch goal
+## Stretch goal
 
 Run the Streamlit live-view UI instead of the plain CLI:
 ```bash

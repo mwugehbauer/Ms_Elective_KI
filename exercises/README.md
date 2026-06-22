@@ -4,14 +4,12 @@
 
 These are the hands-on exercise sessions for **Aktuelle Fallstudien der Digitalökonomie und der Künstlichen Intelligenz: Generative und Agentische KI**. Lecture theory is delivered via slides in class; this series is the practice companion, using this repository as the running example, and is deliberately scoped to the concepts that are actually demonstrated in this project's code rather than a comprehensive survey of every agentic-AI topic.
 
-Every exercise session has the same two-part shape:
-- **Part 1 — Theory**
-  - **Concept** — what the idea is and why it matters
-  - **Original paper** — the seminal paper (or book/spec) behind the concept, with a reproduced figure where one exists and is openly available
-- **Part 2 — Practice**
-  - **In this repo** — exactly where that concept already shows up in `research_crew`, with file/line references
-  - **Task** — something you implement or modify yourself
-  - **Stretch goal** (optional) — a harder follow-up if you finish early
+Every exercise session starts directly with the practical work rather than a separate theory block — it weaves in just enough background from the relevant paper (a short citation and, where one exists, its original figure) to place the concept, then goes straight into the code:
+- **In this repo** — exactly where the concept already shows up in `research_crew`, with file/line references
+- **Task** — something you implement or modify yourself
+- **Stretch goal** (optional) — a harder follow-up if you finish early
+
+This series doesn't repeat the lecture's own treatment of each topic — it's the hands-on companion, not a second lecture.
 
 You should have [Run the crew](../README.md#run-the-crew) working (via Codespaces or locally) before exercise 1.
 

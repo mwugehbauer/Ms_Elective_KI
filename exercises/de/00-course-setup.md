@@ -2,15 +2,9 @@
 
 🇩🇪 **Deutsch** (diese Seite) · 🇬🇧 [English](../en/00-course-setup.md)
 
-## Teil 1 — Theorie
-
-### Konzept
-
 Bevor irgendein Agenten-Code geschrieben wird, braucht jeder eine identische, funktionierende Umgebung. Die zwei häufigsten Zeitfresser in einer Übung sind: Studierende, die an der lokalen Installation hängen bleiben, und Studierende, denen API-Schlüssel fehlen. Beides lösen wir vor Übung 1.
 
-## Teil 2 — Praxis
-
-### In diesem Repo
+## In diesem Repo
 
 Dieses Projekt unterstützt zwei Einrichtungswege, dokumentiert im Haupt-[README](../../README.md#getting-started--choose-one-option):
 
@@ -22,7 +16,7 @@ In beiden Fällen werden drei API-Schlüssel benötigt, bevor überhaupt etwas l
 - `SERPER_API_KEY` — treibt das Web-Such-Tool des Researcher-Agenten an
 - `GEMINI_API_KEY` — treibt Embeddings für Knowledge-/Memory-Funktionen an, nicht das Chat-LLM (siehe Übung 03)
 
-### Aufgabe
+## Aufgabe
 
 1. Wählt einen Einrichtungsweg (Codespaces oder lokal) und bringt ihn gemäß README zum Laufen.
 2. Holt euch eigene kostenlose API-Schlüssel:
@@ -38,7 +32,7 @@ In beiden Fällen werden drei API-Schlüssel benötigt, bevor überhaupt etwas l
 
 Falls ein Schlüssel fehlt, schlägt `main.py` jetzt sofort mit einer klaren Meldung fehl, die genau benennt, welcher Schlüssel fehlt, plus einem Link, um einen zu bekommen — statt eines tiefen Stack-Traces aus dem Inneren von `crewai`. Behebt das und führt die Crew erneut aus; falls Schritt 5 trotz gesetzter Schlüssel weiter fehlschlägt, behebt das jetzt — jede spätere Übung setzt voraus, dass dies funktioniert. Weitere häufige Anfangsprobleme: ein Tippfehler im Modellnamen, ein erreichtes Rate-Limit im kostenlosen Kontingent (kurz warten und erneut versuchen), oder — bei einem älteren Klon dieses Repos ohne den `MODEL`-Default in `main.py` — ein Fehler "OPENAI_API_KEY is required", der bedeutet, dass `MODEL` selbst nie in der Umgebung angekommen ist (Codespaces-Secrets überspringen den Default-Wert aus `.env.example` komplett; fügt zusätzlich `MODEL=groq/llama-3.3-70b-versatile` als Codespaces-Secret hinzu, oder aktualisiert `main.py`).
 
-### Zusatzaufgabe
+## Zusatzaufgabe
 
 Startet stattdessen die Streamlit-Live-Oberfläche statt der reinen Kommandozeile:
 ```bash

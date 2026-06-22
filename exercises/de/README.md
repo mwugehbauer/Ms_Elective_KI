@@ -4,14 +4,12 @@
 
 Das sind die praktischen Übungssitzungen zu **Aktuelle Fallstudien der Digitalökonomie und der Künstlichen Intelligenz: Generative und Agentische KI**. Die Vorlesungstheorie wird über Folien im Kurs vermittelt; diese Reihe ist die praktische Begleitung dazu und nutzt dieses Repository als durchgängiges Beispiel — bewusst beschränkt auf die Konzepte, die im Code dieses Projekts tatsächlich gezeigt werden, statt eines umfassenden Überblicks über jedes agentische KI-Thema.
 
-Jede Übung hat denselben zweiteiligen Aufbau:
-- **Teil 1 — Theorie**
-  - **Konzept** — was die Idee ist und warum sie wichtig ist
-  - **Originalarbeit** — das bahnbrechende Paper (oder Buch/Spezifikation) hinter dem Konzept, mit reproduzierter Abbildung, wo eine existiert und frei verfügbar ist
-- **Teil 2 — Praxis**
-  - **In diesem Repo** — wo genau dieses Konzept bereits in `research_crew` auftaucht, mit Datei-/Zeilenverweisen
-  - **Aufgabe** — etwas, das ihr selbst implementiert oder verändert
-  - **Zusatzaufgabe** (optional) — eine schwerere Anschlussaufgabe für alle, die früher fertig sind
+Jede Übung startet direkt mit der praktischen Arbeit statt mit einem eigenen Theorie-Block — sie webt gerade so viel Hintergrund aus dem jeweiligen Paper ein (ein kurzes Zitat und, wo vorhanden, dessen Originalabbildung), um das Konzept einzuordnen, und geht dann direkt in den Code:
+- **In diesem Repo** — wo genau das Konzept bereits in `research_crew` auftaucht, mit Datei-/Zeilenverweisen
+- **Aufgabe** — etwas, das ihr selbst implementiert oder verändert
+- **Zusatzaufgabe** (optional) — eine schwerere Anschlussaufgabe für alle, die früher fertig sind
+
+Diese Reihe wiederholt nicht, was die Vorlesung zu jedem Thema bereits behandelt — sie ist die praktische Begleitung, keine zweite Vorlesung.
 
 Ihr solltet [Run the crew](../../README.md#getting-started--choose-one-option) (über Codespaces oder lokal) funktionsfähig haben, bevor Übung 1 beginnt.
 
